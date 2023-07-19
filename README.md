@@ -24,4 +24,4 @@
 ## 2. Improve DAO query's
 * To complete this assessment, I followed the requirements to explain the improvements in the code. I used features of Java 17, such as Text Blocks and so on. 
 * You can find the test questions in the [repository](./documnetation/Pruebas-java-ATC.txt);  
-* You can find the file with the test here:[Test-linked-list](./src/main/java/org/pedidos/TestSqlDao.java);  
+* You can find the file with the test here:[TestSqlDao](./src/main/java/org/pedidos/TestSqlDao.java);  
