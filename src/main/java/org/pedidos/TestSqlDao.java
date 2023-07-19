@@ -106,20 +106,15 @@ public class TestSqlDao {
 
                 while (rs.next()) {
 
-                    long idPedido = rs.getLong("ID_PEDIDO");
-                    long idTienda = rs.getLong("ID_TIENDA");
-                    double subtotal = rs.getDouble("SUBTOTAL");
-                    double total = rs.getDouble("TOTAL");
-                    Timestamp fecha = rs.getTimestamp("FECHA");
-                    String direccion = rs.getString("DIRECCION");
-
-                    stmt2.setLong(1, idPedido);
-                    stmt2.setLong(2, idTienda);
+                    //Mejora: Con este uso del prepare statement sin el uso de la concatenacion directa se
+                    //previenen ataques de SQL injection
+                    stmt2.setLong(1, rs.getLong("ID_PEDIDO"));
+                    stmt2.setLong(2, rs.getLong("ID_TIENDA"));
                     stmt2.setLong(3, idUserDes);
-                    stmt2.setTimestamp(4, fecha);
-                    stmt2.setDouble(5, subtotal);
-                    stmt2.setDouble(6, total);
-                    stmt2.setString(7, direccion);
+                    stmt2.setTimestamp(4,  rs.getTimestamp("FECHA"));
+                    stmt2.setDouble(5, rs.getDouble("SUBTOTAL"));
+                    stmt2.setDouble(6, rs.getDouble("TOTAL"));
+                    stmt2.setString(7,  rs.getString("DIRECCION"));
 
                     //Desactiva el auto commit para trabajar en modo trasaccional
                     connection2.setAutoCommit(false);
@@ -192,10 +187,13 @@ public class TestSqlDao {
         try (Connection connection = getConnection();
              PreparedStatement stmt = connection.prepareStatement(query)) {
 
+            //Mejora: Con este uso del prepare statement sin el uso de la concatenacion directa se
+            //previenen ataques de SQL injection
             stmt.setInt(1, idTienda);
             stmt.setInt(2, idTienda);
             ResultSet rs = stmt.executeQuery();
 
+            //Mejora: Al recibir un solo dato siempre no es necesaria el uso de un bucle.
             if (rs.next()) {
 
                 return new PedidoUsuario(
