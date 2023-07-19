@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.linkedlist.doub.LinkedDoubleListTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-07-19T19:18:12" hostname="ingeniero-vm" time="0.06">
+  <properties/>
+  <testcase name="updateNode()" classname="org.linkedlist.doub.LinkedDoubleListTest" time="0.06"/>
+  <system-out><![CDATA[test
+test
+ | 100 | ->  | 90 | ->  | 45 | -> 
+Dato encontrado: 90 
+ Dato encontrado: 200 
+  | 100 | ->  | 200 | ->  | 45 | -> 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
