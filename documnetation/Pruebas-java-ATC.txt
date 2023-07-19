@@ -1,0 +1,8 @@
+Pruebas Java – ATC
+
+1.	Prueba
+Implementa en Java una lista doblemente enlazada con test unitarios. Por favor, ejecuta la implementación desde una aproximación lo más académica posible.
+2.	Prueba
+Mejorar cada uno de los métodos a nivel SQL y código cuando sea necesario dada la clase TestSqlDao.java
+•	Razonar cada una de las mejoras que se han implementado
+•	No es necesario que el código implementado funcione.

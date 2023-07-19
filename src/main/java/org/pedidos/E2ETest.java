@@ -2,7 +2,7 @@ package org.pedidos;
 
 import java.util.Set;
 
-public class Main {
+public class E2ETest {
     public static void main(String[] args) throws Exception {
 
         var dao = TestSqlDao.getInstance();
